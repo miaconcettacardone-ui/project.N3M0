@@ -43,7 +43,7 @@
 @media(max-width:600px){.impact-grid{grid-template-columns:1fr}.amount-grid{gap:0.4rem}}
 @endsection
 @section('content')
-<div class="page-hero"><div class="donate-hero-icon">&#128154;</div><p class="page-hero-label">Make a Difference</p><h1>Support the <em>Organizations</em> That Protect Our Planet</h1><p>100% of donations go directly to conservation organizations. We don't take a cut.</p></div>
+<div class="page-hero"><div class="donate-hero-icon">&#128154;</div><p class="page-hero-label">Make a Difference</p><h1>Donate Through <em>ProjectNEMO</em></h1><p>All donations go through us to ensure 100% reaches the organizations doing the work. No hidden fees, no overhead. <a href="/transparency" style="color:var(--amber);text-decoration:underline;">See our transparency report &rarr;</a></p></div>
 
 <!-- ORGANIZATION OF THE MONTH -->
 <section class="section"><div class="container">
@@ -83,15 +83,15 @@
 <div style="text-align:center;margin-bottom:2.5rem;">
     <p class="section-label">Our Partners</p>
     <h2 class="section-title" style="text-align:center">More Organizations We Support</h2>
-    <p class="section-subtitle" style="margin:0 auto;">Click to learn more and donate directly to these organizations.</p>
+    <p class="section-subtitle" style="margin:0 auto;">All donations are processed through ProjectNEMO and distributed directly to these organizations. <a href="/transparency" style="color:var(--amber);">View our transparency report</a> for proof.</p>
 </div>
 <div class="org-grid">
-    <div class="org-card"><div class="org-card-header wwf">&#128060;</div><div class="org-card-body"><h3>World Wildlife Fund</h3><p>Working in nearly 100 countries to protect wildlife and their habitats, focusing on the world's most ecologically important regions.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
-    <div class="org-card"><div class="org-card-header rainforest">&#127795;</div><div class="org-card-body"><h3>Rainforest Alliance</h3><p>Working at the intersection of business, agriculture, and forests to create a better future for people and nature.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
-    <div class="org-card"><div class="org-card-header ocean-c">&#128011;</div><div class="org-card-body"><h3>Ocean Conservancy</h3><p>Championing science-based solutions for a healthy ocean and the wildlife and communities that depend on it.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
-    <div class="org-card"><div class="org-card-header wcs">&#129409;</div><div class="org-card-body"><h3>Wildlife Conservation Society</h3><p>Saving wildlife and wild places through science, conservation action, education, and inspiring people to value nature.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
-    <div class="org-card"><div class="org-card-header ifaw">&#128062;</div><div class="org-card-body"><h3>IFAW</h3><p>International Fund for Animal Welfare rescues and protects animals around the world, from disaster response to habitat conservation.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
-    <div class="org-card"><div class="org-card-header coral">&#129680;</div><div class="org-card-body"><h3>Coral Reef Alliance</h3><p>Uniting communities to save coral reefs through reducing direct threats and helping reefs adapt to climate change.</p><a href="#" class="btn-primary">Donate &rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header wwf">&#128060;</div><div class="org-card-body"><h3>World Wildlife Fund</h3><p>Working in nearly 100 countries to protect wildlife and their habitats, focusing on the world's most ecologically important regions.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header rainforest">&#127795;</div><div class="org-card-body"><h3>Rainforest Alliance</h3><p>Working at the intersection of business, agriculture, and forests to create a better future for people and nature.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header ocean-c">&#128011;</div><div class="org-card-body"><h3>Ocean Conservancy</h3><p>Championing science-based solutions for a healthy ocean and the wildlife and communities that depend on it.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header wcs">&#129409;</div><div class="org-card-body"><h3>Wildlife Conservation Society</h3><p>Saving wildlife and wild places through science, conservation action, education, and inspiring people to value nature.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header ifaw">&#128062;</div><div class="org-card-body"><h3>IFAW</h3><p>International Fund for Animal Welfare rescues and protects animals around the world, from disaster response to habitat conservation.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
+    <div class="org-card"><div class="org-card-header coral">&#129680;</div><div class="org-card-body"><h3>Coral Reef Alliance</h3><p>Uniting communities to save coral reefs through reducing direct threats and helping reefs adapt to climate change.</p><a href="#" class="btn-primary">Donate via NEMO Donate &rarr;rarr;</a></div></div>
 </div>
 </div></section>
 

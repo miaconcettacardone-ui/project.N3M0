@@ -290,6 +290,7 @@
                     <a href="/gallery">Gallery</a>
                     <a href="/discovery">Discovery Log</a>
                     <a href="/wildlife">Wildlife Spotlight</a>
+                    <a href="/map">World Map</a>
                     <div class="dd-divider"></div>
                     <a href="/resources">Resources</a>
                 </div>
@@ -301,6 +302,7 @@
                     <a href="/transparency">Transparency Report</a>
                     <div class="dd-divider"></div>
                     <a href="/volunteer">Vetted Organizations</a>
+                    <a href="/shop">Shop</a>
                     <a href="/contact">Contact Us</a>
                 </div>
             </li>
@@ -387,6 +389,7 @@
             </div>
             <div class="footer-column">
                 <h4>Support</h4>
+                <li><a href="/shop">Shop</a></li>
                 <ul>
                     <li><a href="/donate">Donate</a></li>
                     <li><a href="#">Volunteer</a></li>

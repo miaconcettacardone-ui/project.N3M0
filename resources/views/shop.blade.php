@@ -153,12 +153,27 @@
 <div class="container">
     <div style="text-align:center;margin-bottom:1rem;"><p class="section-label">Questions?</p><h2 class="section-title" style="text-align:center">Frequently Asked</h2></div>
     <div class="faq-list">
-        <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question">Where does the money go?</div><div class="faq-answer">15% of all proceeds go directly to our partner conservation organizations. The rest covers production costs, shipping, and helps fund ProjectNEMO's educational content and operations.</div></div>
-        <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question">Are the products really eco-friendly?</div><div class="faq-answer">Yes! We use organic and recycled materials wherever possible, eco-friendly water-based inks, and recycled packaging. Our print-on-demand model means zero excess inventory and zero waste.</div></div>
-        <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question">How long does shipping take?</div><div class="faq-answer">Since items are printed on demand, production takes 2-5 business days. Shipping typically takes 5-10 business days depending on your location.</div></div>
-        <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question">Can I return or exchange items?</div><div class="faq-answer">Because items are made just for you, we can't accept returns for change of mind. However, if there's a defect or printing error, we'll replace it — just contact us within 14 days.</div></div>
-        <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question">Do you ship internationally?</div><div class="faq-answer">Yes! We ship worldwide. Shipping costs and delivery times vary by location. International orders may be subject to local customs duties and taxes.</div></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Where does the money go?</div>
+        <div class="faq-answer">15% of all proceeds go directly to our partner conservation organizations. The rest covers production costs, shipping, and helps fund ProjectNEMO's educational content and operations.</div>
     </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Are the products really eco-friendly?</div>
+        <div class="faq-answer">Yes! We use organic and recycled materials wherever possible, eco-friendly water-based inks, and recycled packaging. Our print-on-demand model means zero excess inventory and zero waste.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">How long does shipping take?</div>
+        <div class="faq-answer">Since items are printed on demand, production takes 2-5 business days. Shipping typically takes 5-10 business days depending on your location.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Can I return or exchange items?</div>
+        <div class="faq-answer">Because items are made just for you, we can't accept returns for change of mind. However, if there's a defect or printing error, we'll replace it — just contact us within 14 days.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-question">Do you ship internationally?</div>
+        <div class="faq-answer">Yes! We ship worldwide. Shipping costs and delivery times vary by location. International orders may be subject to local customs duties and taxes.</div>
+    </div>
+</div>
 </div>
 </section>
 @endsection

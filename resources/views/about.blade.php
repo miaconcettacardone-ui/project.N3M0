@@ -1,106 +1,128 @@
 @extends('layouts.app')
 @section('title', 'About — ProjectNEMO')
 @section('extra-styles')
-.about-me{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:start;margin-bottom:4rem}
-.about-photo{width:300px;height:380px;border-radius:20px;background:linear-gradient(145deg,var(--forest),var(--sage));display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden}
-.about-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:0.85rem}
-.about-photo-placeholder span{font-size:4rem;margin-bottom:0.5rem}
-.about-bio h3{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--forest-deep);margin-bottom:0.2rem}
-.about-bio .role{font-size:1rem;color:var(--sage);font-weight:600;margin-bottom:1.2rem}
-.about-bio p{font-size:1.05rem;color:var(--text-muted);line-height:1.8;margin-bottom:1rem}
+/* Mission Statement */
 .mission-quote{text-align:center;padding:3rem 2rem;margin:2rem 0}
 .mission-quote blockquote{font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--forest-deep);line-height:1.4;max-width:700px;margin:0 auto;position:relative}
 .mission-quote blockquote::before{content:'\201C';font-size:5rem;color:var(--sage-light);position:absolute;top:-1.5rem;left:-2rem;line-height:1}
-.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
-.highlight-card{border-radius:14px;overflow:hidden;background:white;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all 0.3s}
-.highlight-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
-.highlight-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem}
-.highlight-img.a{background:linear-gradient(135deg,#1a4a5e,#3d8fa3)}
-.highlight-img.b{background:linear-gradient(135deg,#1a3c2a,#7c9a72)}
-.highlight-img.c{background:linear-gradient(135deg,#4a3c1a,#8a7a4a)}
-.highlight-body{padding:1.2rem}
-.highlight-body h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest-deep);margin-bottom:0.3rem}
-.highlight-body p{font-size:0.85rem;color:var(--text-muted);line-height:1.5}
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-.value-card{background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);text-align:center}
-.value-icon{font-size:3rem;margin-bottom:1rem}
-.value-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--forest-deep);margin-bottom:0.6rem}
-.value-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-.team-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all 0.3s}
-.team-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
-.team-photo{height:220px;background:linear-gradient(135deg,var(--forest-deep),var(--sage));display:flex;align-items:center;justify-content:center;font-size:4rem}
-.team-info{padding:1.5rem;text-align:center}
-.team-info h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--forest-deep)}
-.team-info p{font-size:0.85rem;color:var(--text-muted);margin-top:0.3rem}
-.where-map-placeholder{width:100%;height:400px;border-radius:16px;background:linear-gradient(135deg,var(--forest-deep),#2d5a3f);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:1.2rem;margin-top:1.5rem}
-@media(max-width:968px){.about-me{grid-template-columns:1fr;justify-items:center}.about-photo{width:250px;height:300px}.highlights-grid,.values-grid,.team-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
+
+/* What We Do */
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.what-card{background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);text-align:center}
+.what-icon{font-size:3rem;margin-bottom:1rem}
+.what-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--forest-deep);margin-bottom:0.6rem}
+.what-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+
+/* Inspiration */
+.inspiration{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.inspiration-text h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--forest-deep);margin-bottom:1rem}
+.inspiration-text p{font-size:1rem;color:var(--text-muted);line-height:1.8;margin-bottom:1rem}
+.inspiration-visual{background:linear-gradient(145deg,var(--forest),var(--sage));border-radius:20px;height:380px;display:flex;align-items:center;justify-content:center;font-size:5rem}
+
+/* Where We've Been */
+.map-cta-box{background:linear-gradient(135deg,var(--forest-deep),#2d5a3f);border-radius:20px;padding:3rem;text-align:center;color:white;margin-top:1.5rem}
+.map-cta-box h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:0.8rem}
+.map-cta-box p{opacity:0.8;margin-bottom:1.5rem;font-size:1rem}
+.btn-light{background:white;color:var(--forest-deep);padding:0.8rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:0.9rem;transition:all 0.3s;display:inline-block}
+.btn-light:hover{background:var(--sand-light);transform:translateY(-2px)}
+
+/* Team Preview */
+.team-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.team-preview-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);text-align:center;padding-bottom:1.5rem;transition:all 0.3s}
+.team-preview-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.team-preview-photo{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.team-preview-photo.mia{background:linear-gradient(135deg,#1a3c2a,#4a7c5e)}
+.team-preview-photo.britton{background:linear-gradient(135deg,#1a2c4a,#3d6a8a)}
+.team-preview-photo.kaleb{background:linear-gradient(135deg,#3c2a1a,#8a6a3d)}
+.team-preview-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest-deep);margin:1rem 0 0.3rem}
+.team-preview-card p{font-size:0.82rem;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.team-cta{text-align:center;margin-top:2rem}
+
+@media(max-width:968px){
+    .what-grid,.team-preview{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
+    .inspiration{grid-template-columns:1fr}
+    .inspiration-visual{height:250px}
+}
 @endsection
+
 @section('content')
-<div class="page-hero"><p class="page-hero-label">About</p><h1>Meet <em>Mia Cardone</em></h1><p>The person behind ProjectNEMO and the mission to educate the world about our natural environment.</p></div>
+<div class="page-hero">
+    <p class="page-hero-label">About</p>
+    <h1>About <em>ProjectNEMO</em></h1>
+    <p>Nature. Education. Mission. Outreach. — learn about who we are, what we do, and why it matters.</p>
+</div>
 
-<!-- ABOUT ME -->
+<!-- MISSION -->
 <section class="section"><div class="container">
-<div class="about-me">
-    <div class="about-photo"><div class="about-photo-placeholder"><span>&#128247;</span>Your photo here</div></div>
-    <div class="about-bio">
-        <h3>Mia Cardone</h3>
-        <p class="role">Founder & Creator, ProjectNEMO</p>
-        <p>Hello! My name is Mia and I'm the founder of ProjectNEMO. This is where your personal story goes — how you got interested in wildlife conservation, what drives you, your background, and why you started this project.</p>
-        <p>Replace this placeholder text with your real bio. Talk about your education, your experiences in the field, what inspires you, and what you hope to achieve with ProjectNEMO.</p>
-        <p>Nature. Education. Mission. Outreach. — these four words guide everything we do.</p>
+    <div class="mission-quote">
+        <blockquote>"Your mission statement goes here — something powerful and personal about why ProjectNEMO exists and what you're fighting for."</blockquote>
     </div>
-</div>
 
-<div class="mission-quote">
-    <blockquote>"Your mission statement goes here — something powerful and personal about why ProjectNEMO exists and what you're fighting for."</blockquote>
-</div>
-
-<!-- HIGHLIGHTS -->
-<div>
-    <p class="section-label">Highlights</p>
-    <h2 class="section-title">What I've Been Up To</h2>
-    <p class="section-subtitle">Events, speaking, volunteering, fieldwork, and more.</p>
-    <div class="highlights-grid">
-        <div class="highlight-card"><div class="highlight-img a">&#127758;</div><div class="highlight-body"><h4>Placeholder Highlight</h4><p>Add your real highlights here — field work, events, speaking engagements, etc.</p></div></div>
-        <div class="highlight-card"><div class="highlight-img b">&#127793;</div><div class="highlight-body"><h4>Placeholder Highlight</h4><p>Photos and descriptions of things you've done and places you've been.</p></div></div>
-        <div class="highlight-card"><div class="highlight-img c">&#128062;</div><div class="highlight-body"><h4>Placeholder Highlight</h4><p>Your experiences working with animals, organizations, or communities.</p></div></div>
+    <!-- WHAT WE DO -->
+    <div style="margin-top:1rem;">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">ProjectNEMO exists at the intersection of wildlife science, storytelling, and action.</p>
+        <div class="what-grid">
+            <div class="what-card"><div class="what-icon">📚</div><h4>Educate</h4><p>We translate complex environmental science into accessible stories that inspire curiosity and understanding in people of all ages.</p></div>
+            <div class="what-card"><div class="what-icon">🌍</div><h4>Document</h4><p>Through fieldwork, research, and partnerships, we document wildlife and ecosystems from around the world before it's too late.</p></div>
+            <div class="what-card"><div class="what-icon">💚</div><h4>Mobilize</h4><p>We connect our community with vetted organizations, volunteer opportunities, and ways to take real action for the planet.</p></div>
+        </div>
     </div>
-</div>
 </div></section>
 
-<!-- VALUES -->
+<!-- INSPIRATION -->
 <section class="section section-alt"><div class="container">
-<div style="text-align:center;margin-bottom:2rem;">
-    <p class="section-label">Our Values</p>
-    <h2 class="section-title" style="text-align:center">What Drives ProjectNEMO</h2>
-</div>
-<div class="values-grid">
-    <div class="value-card"><div class="value-icon">&#128218;</div><h4>Education First</h4><p>We believe informed communities make better decisions for the planet. Knowledge is the foundation of change.</p></div>
-    <div class="value-card"><div class="value-icon">&#127758;</div><h4>Global Perspective</h4><p>Environmental issues don't respect borders. We cover stories from every corner of the globe.</p></div>
-    <div class="value-card"><div class="value-icon">&#128154;</div><h4>Action-Oriented</h4><p>We don't just raise awareness — we connect people with tangible ways to make a difference.</p></div>
-</div>
+    <div class="inspiration">
+        <div class="inspiration-text">
+            <p class="section-label">Our Story</p>
+            <h2>Where It All Began</h2>
+            <p>Replace this with the real story of how ProjectNEMO was born — the moment, the place, the animal, or the experience that made you realize this had to exist.</p>
+            <p>Talk about what NEMO stands for, why those four words matter, and how that vision has evolved into what the project is today.</p>
+            <p>This is the section that makes people feel connected to the mission on a human level — be honest, specific, and personal.</p>
+        </div>
+        <div class="inspiration-visual">🌿</div>
+    </div>
 </div></section>
 
-<!-- TEAM -->
-<section class="section" id="team"><div class="container">
-<div style="text-align:center;margin-bottom:2rem;">
-    <p class="section-label">Our Team</p>
-    <h2 class="section-title" style="text-align:center">The People Behind NEMO</h2>
-    <p class="section-subtitle" style="margin:0 auto;text-align:center;">The passionate individuals working to make ProjectNEMO's mission a reality.</p>
-</div>
-<div class="team-grid">
-    <div class="team-card"><div class="team-photo">&#128100;</div><div class="team-info"><h4>Mia Cardone</h4><p>Founder & Lead Writer</p></div></div>
-    <div class="team-card"><div class="team-photo">&#128100;</div><div class="team-info"><h4>Team Member</h4><p>Research & Content</p></div></div>
-    <div class="team-card"><div class="team-photo">&#128100;</div><div class="team-info"><h4>Team Member</h4><p>Design & Media</p></div></div>
-</div>
+<!-- WHERE WE'VE BEEN -->
+<section class="section"><div class="container">
+    <p class="section-label">Where?</p>
+    <h2 class="section-title">Where We've Been</h2>
+    <p class="section-subtitle">From fieldwork in Zimbabwe to puffin monitoring in Iceland — explore every location that has shaped ProjectNEMO's story.</p>
+    <div class="map-cta-box">
+        <h3>🌍 Explore Our Interactive World Map</h3>
+        <p>Click pins to discover fieldwork locations, partner organizations, volunteer opportunities, wildlife hotspots, and fun facts from around the globe.</p>
+        <a href="/map" class="btn-light">Open the Map →</a>
+    </div>
 </div></section>
 
-<!-- MAP -->
+<!-- TEAM PREVIEW -->
 <section class="section section-alt"><div class="container">
-<p class="section-label">Where?</p>
-<h2 class="section-title">Where I've Been & Where NEMO Works</h2>
-<p class="section-subtitle">An interactive map is coming soon showing everywhere I've traveled, done fieldwork, and where our partner programs operate.</p>
-<div class="where-map-placeholder">&#127758; Interactive Map Coming Soon</div>
+    <div style="text-align:center;margin-bottom:2rem;">
+        <p class="section-label">Our People</p>
+        <h2 class="section-title" style="text-align:center">The Team Behind NEMO</h2>
+        <p class="section-subtitle" style="text-align:center;margin:0 auto;">A small but passionate group of people united by a love for the natural world.</p>
+    </div>
+    <div class="team-preview">
+        <div class="team-preview-card">
+            <div class="team-preview-photo mia">👩</div>
+            <h4>Mia Cardone</h4>
+            <p>Founder & Creator</p>
+        </div>
+        <div class="team-preview-card">
+            <div class="team-preview-photo britton">👨‍💻</div>
+            <h4>Britton Bolgen</h4>
+            <p>CTO & Editing Chief</p>
+        </div>
+        <div class="team-preview-card">
+            <div class="team-preview-photo kaleb">👨</div>
+            <h4>Kaleb Watson</h4>
+            <p>CMO</p>
+        </div>
+    </div>
+    <div class="team-cta">
+        <a href="/team" class="btn-primary">Meet the Full Team →</a>
+    </div>
 </div></section>
 @endsection

@@ -17,7 +17,7 @@
 .filter-dot.funfacts{background:#8e44ad}
 
 /* Map Container */
-.map-container{position:relative;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,0.15);background:var(--forest-deep)}
+.map-container{position:relative;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,0.15)}
 #world-map{width:100%;height:550px}
 
 /* Map Legend */
@@ -25,13 +25,13 @@
 .legend-item{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;font-weight:600;color:var(--text-muted)}
 .legend-dot{width:10px;height:10px;border-radius:50%}
 
-/* Info Panel (popup) */
+/* Popup */
 .map-popup{display:none;position:absolute;z-index:50;background:white;border-radius:16px;box-shadow:0 15px 50px rgba(0,0,0,0.2);max-width:340px;width:90%;overflow:hidden;animation:popupIn 0.3s ease}
-@keyframes popupIn{from{opacity:0;transform:translate(-50%,-50%) scale(0.95)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes popupIn{from{opacity:0;transform:translate(-50%,-48%) scale(0.95)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 .map-popup.show{display:block}
 .popup-header{padding:1rem 1.2rem 0.8rem;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:start;gap:0.8rem}
 .popup-header h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--forest-deep);line-height:1.3}
-.popup-header .popup-tag{font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:50px;white-space:nowrap}
+.popup-tag{font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:50px;white-space:nowrap}
 .popup-tag.fieldwork{background:#fef0db;color:#b5751a}
 .popup-tag.partners{background:#dff0f7;color:#1a6a8a}
 .popup-tag.volunteer{background:#e5f2e0;color:#3a6b2a}
@@ -41,12 +41,16 @@
 .popup-close:hover{color:var(--forest-deep)}
 .popup-body{padding:1rem 1.2rem}
 .popup-body p{font-size:0.9rem;color:var(--text-muted);line-height:1.65;margin-bottom:0.8rem}
-.popup-body .popup-location{font-size:0.78rem;font-weight:600;color:var(--sage);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.3rem}
+.popup-location{font-size:0.78rem;font-weight:600;color:var(--sage);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.3rem}
 .popup-images{display:flex;gap:0.5rem;margin-bottom:0.8rem}
 .popup-img-placeholder{width:80px;height:60px;border-radius:8px;background:linear-gradient(135deg,var(--sage),var(--forest));display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:rgba(255,255,255,0.8)}
 .popup-links{display:flex;gap:0.5rem;flex-wrap:wrap}
 .popup-link{font-size:0.78rem;font-weight:700;color:var(--amber);text-decoration:none;padding:0.3rem 0.8rem;border:1.5px solid var(--amber);border-radius:50px;transition:all 0.2s}
 .popup-link:hover{background:var(--amber);color:var(--forest-deep)}
+
+/* Custom marker styles */
+.custom-marker{width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,0.3);border:2px solid white;cursor:pointer}
+.custom-marker span{transform:rotate(45deg);font-size:15px;display:block}
 
 /* Stats Bar */
 .map-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
@@ -57,11 +61,6 @@
 /* CTA */
 .map-cta{text-align:center;margin-top:3rem}
 .map-cta p{font-size:1rem;color:var(--text-muted);margin-bottom:1.2rem}
-
-/* Leaflet overrides */
-.leaflet-control-zoom a{background:var(--forest) !important;color:white !important;border:none !important}
-.leaflet-control-zoom a:hover{background:var(--forest-deep) !important}
-.custom-pin{background:transparent !important;border:none !important}
 
 @media(max-width:968px){
     #world-map{height:380px}
@@ -112,7 +111,7 @@
                 <button class="popup-close" onclick="closePopup()">&times;</button>
             </div>
             <div class="popup-body">
-                <p class="popup-location" id="popupLocation">&#128205; Location</p>
+                <p class="popup-location" id="popupLocation">📍 Location</p>
                 <div class="popup-images" id="popupImages"></div>
                 <p id="popupDesc">Description goes here.</p>
                 <div class="popup-links" id="popupLinks"></div>
@@ -147,16 +146,11 @@
 @endsection
 
 @section('scripts')
-<!-- Leaflet CSS & JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Mapbox GL JS -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
 
 <script>
-// ============================
-// MAP PIN DATA
-// Edit this array to add/remove/change pins!
-// Categories: fieldwork, partners, volunteer, wildlife, funfacts
-// ============================
 const mapPins = [
     {
         lat: -23.5505, lng: -46.6333,
@@ -268,24 +262,6 @@ const mapPins = [
     }
 ];
 
-// ============================
-// MAP INITIALIZATION
-// ============================
-const map = L.map('world-map', {
-    center: [20, 0],
-    zoom: 2,
-    minZoom: 2,
-    maxZoom: 12,
-    scrollWheelZoom: true,
-    zoomControl: true
-});
-
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    maxZoom: 19
-}).addTo(map);
-
-// Category colors & icons
 const categoryColors = {
     fieldwork: '#d4913b',
     partners: '#3d8fa3',
@@ -302,31 +278,46 @@ const categoryIcons = {
     funfacts: '💡'
 };
 
-function createIcon(category) {
-    const color = categoryColors[category] || '#333';
-    return L.divIcon({
-        className: 'custom-pin',
-        html: '<div style="width:32px;height:32px;border-radius:50% 50% 50% 0;background:'+color+';transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,0.3);border:2px solid white;cursor:pointer;"><span style="transform:rotate(45deg);font-size:14px;">'+categoryIcons[category]+'</span></div>',
-        iconSize: [32, 32],
-        iconAnchor: [16, 32]
-    });
-}
+mapboxgl.accessToken = '{{ env("MAPBOX_TOKEN") }}';
 
-let markers = [];
-
-mapPins.forEach(function(pin) {
-    const marker = L.marker([pin.lat, pin.lng], { icon: createIcon(pin.category) }).addTo(map);
-    marker.pinData = pin;
-    marker.on('click', function() { showPopup(pin); });
-    markers.push(marker);
+const map = new mapboxgl.Map({
+    container: 'world-map',
+    style: 'mapbox://styles/mapbox/outdoors-v12',
+    center: [0, 20],
+    zoom: 1.8,
+    minZoom: 1,
+    maxZoom: 12,
+    scrollZoom: false
 });
 
-// ============================
-// POPUP
-// ============================
-function showPopup(pin) {
-    const popup = document.getElementById('mapPopup');
+map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
+let markerObjects = [];
+let currentFilter = 'all';
+
+map.on('load', function() {
+    mapPins.forEach(function(pin) {
+        const el = document.createElement('div');
+        el.className = 'custom-marker';
+        el.style.background = categoryColors[pin.category] || '#333';
+        el.innerHTML = '<span>' + categoryIcons[pin.category] + '</span>';
+        el.setAttribute('data-category', pin.category);
+
+        el.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showPopup(pin);
+            map.flyTo({ center: [pin.lng, pin.lat], zoom: Math.max(map.getZoom(), 4), duration: 800 });
+        });
+
+        const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+            .setLngLat([pin.lng, pin.lat])
+            .addTo(map);
+
+        markerObjects.push({ marker, el, pin });
+    });
+});
+
+function showPopup(pin) {
     document.getElementById('popupTitle').textContent = pin.title;
     document.getElementById('popupLocation').innerHTML = '📍 ' + pin.location;
     document.getElementById('popupDesc').textContent = pin.description;
@@ -335,37 +326,30 @@ function showPopup(pin) {
     tag.textContent = pin.category.toUpperCase();
     tag.className = 'popup-tag ' + pin.category;
 
-    // Images
     const imgContainer = document.getElementById('popupImages');
     imgContainer.innerHTML = '';
-    if (pin.images) {
-        pin.images.forEach(function(img) {
-            const div = document.createElement('div');
-            div.className = 'popup-img-placeholder';
-            div.textContent = img;
-            imgContainer.appendChild(div);
-        });
-    }
+    (pin.images || []).forEach(function(img) {
+        const div = document.createElement('div');
+        div.className = 'popup-img-placeholder';
+        div.textContent = img;
+        imgContainer.appendChild(div);
+    });
 
-    // Links
     const linksContainer = document.getElementById('popupLinks');
     linksContainer.innerHTML = '';
-    if (pin.links) {
-        pin.links.forEach(function(link) {
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.className = 'popup-link';
-            a.textContent = link.label;
-            linksContainer.appendChild(a);
-        });
-    }
+    (pin.links || []).forEach(function(link) {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.className = 'popup-link';
+        a.textContent = link.label;
+        linksContainer.appendChild(a);
+    });
 
+    const popup = document.getElementById('mapPopup');
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
     popup.classList.add('show');
-
-    map.flyTo([pin.lat, pin.lng], Math.max(map.getZoom(), 4), { duration: 0.8 });
 }
 
 function closePopup() {
@@ -374,23 +358,18 @@ function closePopup() {
 
 map.on('click', closePopup);
 
-// ============================
-// FILTER
-// ============================
 function filterPins(category, btn) {
+    currentFilter = category;
     document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
 
-    markers.forEach(function(marker) {
-        var el = marker.getElement();
-        if (el) {
-            if (category === 'all' || marker.pinData.category === category) {
-                el.style.opacity = '1';
-                el.style.pointerEvents = 'auto';
-            } else {
-                el.style.opacity = '0.15';
-                el.style.pointerEvents = 'none';
-            }
+    markerObjects.forEach(function(obj) {
+        if (category === 'all' || obj.pin.category === category) {
+            obj.el.style.opacity = '1';
+            obj.el.style.pointerEvents = 'auto';
+        } else {
+            obj.el.style.opacity = '0.15';
+            obj.el.style.pointerEvents = 'none';
         }
     });
 

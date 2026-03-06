@@ -16,3 +16,5 @@ Route::get('/resources', function () { return view('resources'); });
 Route::get('/discovery', function () { return view('discovery'); });
 Route::get('/transparency', function () { return view('transparency'); });
 Route::get('/volunteer', function () { return view('volunteer'); });
+Route::get('/map', function () { return view('worldmap'); });
+Route::get('/shop', function () { return view('shop'); });

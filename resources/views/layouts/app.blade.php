@@ -276,8 +276,8 @@
         <ul class="nav-links">
             <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
             <li class="nav-dropdown">
-                <a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">About &#9662;</a>
-                <div class="nav-dropdown-menu">
+                <a href="/about" class="{{ request()->is('about') || request()->is('team') ? 'active' : '' }}">About &#9662;</a>
+                    <div class="nav-dropdown-menu">
                     <a href="/team">Meet the Team</a>
                 </div>
             </li>
@@ -289,6 +289,7 @@
                     <a href="/gallery">Gallery</a>
                     <a href="/discovery">Discovery Log</a>
                     <a href="/wildlife">Wildlife Spotlight</a>
+                    <a href="/journal">The NEMO Journal</a>
                     <a href="/map">World Map</a>
                     <div class="dd-divider"></div>
                     <a href="/resources">Resources</a>
@@ -303,6 +304,7 @@
                     <a href="/volunteer">Vetted Organizations</a>
                     <a href="/shop">Shop</a>
                     <a href="/contact">Contact Us</a>
+                    <a href="/join">Join Our Team</a>
                 </div>
             </li>
             <li><a href="/donate" class="nav-donate-btn">Donate</a></li>
@@ -382,6 +384,7 @@
                 <h4>About</h4>
                 <ul>
                     <li><a href="/about">Our Mission</a></li>
+                    <li><a href="/team">Meet the Team</a></li>
                     <li><a href="/wildlife">Wildlife Spotlight</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>

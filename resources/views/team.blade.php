@@ -25,6 +25,14 @@
 .person-quote{margin:1.5rem 0;padding:1.2rem 1.5rem;border-left:3px solid var(--sage);background:var(--sand-light);border-radius:0 12px 12px 0}
 .person-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--forest-deep);margin:0;line-height:1.6}
 
+/* Join CTA */
+.join-cta{max-width:800px;margin:0 auto}
+.join-cta-inner{background:white;border-radius:24px;padding:3rem;box-shadow:0 8px 40px rgba(0,0,0,0.08);border:1px solid var(--sage-light)}
+.join-note{display:flex;gap:1rem;align-items:flex-start;background:var(--sand-light);border-radius:12px;padding:1.2rem 1.5rem;border-left:4px solid var(--amber);margin-top:1.5rem}
+.join-note span{font-size:1.5rem;flex-shrink:0}
+.join-note p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin:0}
+.join-note strong{color:var(--forest-deep)}
+
 @media(max-width:968px){
     .person-section,.person-section.reverse{grid-template-columns:1fr}
     .person-section.reverse .person-photo,.person-section.reverse .person-bio{order:unset}
@@ -95,30 +103,24 @@
         </div>
     </div>
 
-    <!-- KALEB -->
-    <div class="person-section">
-        <div class="person-photo kaleb">
-            <div class="person-photo-placeholder"><span style="font-size:4rem">📷</span>Photo coming soon</div>
-        </div>
-        <div class="person-bio">
-            <p class="person-label">Chief Marketing Officer</p>
-            <h2>Kaleb Watson</h2>
-            <p class="person-role">Chief Marketing Officer</p>
-            <p>Kaleb is how the world finds out about ProjectNEMO. Replace this with his real bio — his background in marketing, how he came to join the team, and the strategy he's building to grow the platform's reach.</p>
-            <p>Talk about his approach to connecting environmental causes with audiences, the campaigns he's led, and the communities he's helped build around shared values.</p>
-            <div class="person-quote">
-                <p>"Add a quote from Kaleb here — something that captures his belief in the power of storytelling and outreach to drive real change."</p>
+
+</div></section>
+
+<!-- JOIN THE TEAM CTA -->
+<section class="section section-alt"><div class="container">
+    <div class="join-cta">
+        <div class="join-cta-inner">
+            <p class="section-label" style="text-align:center">We're Growing</p>
+            <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--forest-deep);margin-bottom:1rem">Join the <em>Team</em></h2>
+            <p style="text-align:center;color:var(--text-muted);max-width:600px;margin:0 auto 1.5rem;line-height:1.7">We're looking for passionate people to help tell the story of the natural world. Whether you're a wildlife photographer, videographer, media producer, or just someone who cares deeply about conservation — we want to hear from you.</p>
+            <div class="join-note">
+                <span>📋</span>
+                <p>Please note: these are currently <strong>minimum to no-pay positions</strong>. Compensation may include a title within the organization and/or volunteer hours, subject to further discussion. Roles are focused on wildlife photography & videography, media production, content creation, and related fields.</p>
             </div>
-            <p>Share what Kaleb cares about beyond marketing — what drew him to environmental causes, his personal connection to the mission, and where he sees ProjectNEMO going.</p>
-            <div class="person-tags">
-                <span class="person-tag">Marketing</span>
-                <span class="person-tag">Growth Strategy</span>
-                <span class="person-tag">Social Media</span>
-                <span class="person-tag">Community Building</span>
-                <span class="person-tag">CMO</span>
+            <div style="text-align:center;margin-top:2rem">
+                <a href="/join" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Apply to Join the Team →</a>
             </div>
         </div>
     </div>
-
 </div></section>
 @endsection

@@ -27,7 +27,7 @@
 .btn-light:hover{background:var(--sand-light);transform:translateY(-2px)}
 
 /* Team Preview */
-.team-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.team-preview{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem;max-width:600px;margin-left:auto;margin-right:auto}
 .team-preview-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);text-align:center;padding-bottom:1.5rem;transition:all 0.3s}
 .team-preview-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
 .team-preview-photo{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
@@ -115,14 +115,10 @@
             <h4>Britton Bolgen</h4>
             <p>CTO & Editing Chief</p>
         </div>
-        <div class="team-preview-card">
-            <div class="team-preview-photo kaleb">👨</div>
-            <h4>Kaleb Watson</h4>
-            <p>CMO</p>
-        </div>
     </div>
-    <div class="team-cta">
-        <a href="/team" class="btn-primary">Meet the Full Team →</a>
+    <div class="team-cta" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+        <a href="/team" class="btn-primary">Meet the Team →</a>
+        <a href="/join" class="btn-primary" style="background:transparent;border:2px solid var(--forest-deep);color:var(--forest-deep)">Join the Team →</a>
     </div>
 </div></section>
 @endsection
